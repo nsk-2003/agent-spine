@@ -16,7 +16,7 @@ This skill takes the current conversation context and codebase understanding and
 
 Check with the user that these seams match their expectations.
 
-3. Write the spec using the template below, then save it as a new file under `docs/specifications/`. Update `docs/specifications/specindex.md` with the new entry.
+3. Write the spec using the template below, then save it as `spec.md` inside a new numbered folder under `docs/specifications/` (e.g., `docs/specifications/002-<slug>/spec.md`). Also create empty `plan.md` and `tasks.md` stubs in the same folder. Update `docs/specifications/specindex.md` with the new entry.
 
 <spec-template>
 

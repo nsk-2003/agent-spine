@@ -6,9 +6,9 @@ author:
     - mattpocock
 license: MIT
 ---
-Call the Skill tool twice, for "grilling" and "domain-modeling".
+Call the Skill tool for "grilling" if available.
 
-If the skills are not available, follow the behavior described below:
+If the skill is not available, follow the behavior described below:
 
 ## Behavior
 
@@ -36,7 +36,7 @@ Each round the user answers reshapes the tree: settled decisions push the fronti
 
 As decisions are made during the grilling session:
 
-- Record architecture decisions in `docs/design/ADR.md` using the ADR index format.
+- Create individual ADR files in `docs/adrs/adr-<slug>.md` for each architectural decision, then add an entry to the index in `docs/design/ADR.md`.
 - Build a domain glossary in `CONTEXT.md` at the project root (create if it does not exist).
 - Update `docs/design/ARCHITECTURE.md` if architectural constraints are clarified.
 

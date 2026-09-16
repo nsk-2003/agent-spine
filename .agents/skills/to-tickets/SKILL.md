@@ -49,11 +49,13 @@ Iterate until the user approves the breakdown.
 
 ### 5. Publish the tickets
 
-Write one file per ticket under `test/plans/<NN>-<slug>.md`, numbered from `01` in dependency order (blockers first).
+Write the task list as `tasks.md` inside the spec folder that this ticket set belongs to (e.g., `docs/specifications/002-<slug>/tasks.md`). Number tasks in dependency order (blockers first).
 
 <ticket-template>
 
-# <NN>: <Ticket title>
+# Tasks
+
+## 01: <Ticket title>
 
 **What to build:** the end-to-end behaviour this ticket makes work, from the user's perspective, not a layer-by-layer implementation list.
 
@@ -63,6 +65,10 @@ Write one file per ticket under `test/plans/<NN>-<slug>.md`, numbered from `01` 
 
 - [ ] Acceptance criterion 1
 - [ ] Acceptance criterion 2
+
+## 02: <Next ticket title>
+
+...
 
 </ticket-template>
 
