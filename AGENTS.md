@@ -28,10 +28,11 @@ Specifically, before any code generation:
 | `.agents/skills/` | Agent-specific skill files and tooling configuration. |
 | `docs/devenv.md` | Step-by-step local development environment setup instructions. |
 | `docs/implementation_plan.md` | Phase-wise roadmap and implementation plan. |
-| `docs/specifications/` | Requirement and feature specification documents. |
 | `docs/specifications/specindex.md` | Index of all spec documents. Use this to avoid loading all specs at once. |
+| `docs/specifications/<NNN>-<slug>/` | Individual specification folders (e.g., `001-example-spec/`). Each contains `spec.md`, `plan.md`, `tasks.md`. |
 | `docs/design/ARCHITECTURE.md` | Tech stack, module dependency rules, and high-level architecture. |
-| `docs/design/ADR.md` | Architecture Decision Records index and key decisions. |
+| `docs/design/ADR.md` | Architecture Decision Records index. Individual ADRs live in `docs/adrs/`. |
+| `docs/adrs/` | Individual ADR files (`adr-<slug>.md`). One file per architectural decision. |
 | `docs/design/packagedesign.md` | Mermaid.js diagram of the package/module structure. |
 | `docs/design/sourcemap.md` | Registry of all source code files and their purpose. Updated alongside development. |
 | `src/` | Application source code. |
@@ -41,11 +42,24 @@ Specifically, before any code generation:
 | `environment.sh` | Unix environment setup entry point. |
 | `environment.bat` | Windows environment setup entry point. |
 
+## Agent Skills
+
+This project uses skills from the [Main Flow](https://www.aihero.dev/skills) framework. Skills are stored in `.agents/skills/` and guide the agent through each phase of the workflow.
+
+| Skill | Location | Purpose |
+|---|---|---|
+| Grill with Docs | `.agents/skills/grill-with-docs/` | Stress-test project details and resolve all `TODO` placeholders before coding. |
+| To Spec | `.agents/skills/to-spec/` | Transform a feature idea into a structured specification document. |
+| To Tickets | `.agents/skills/to-tickets/` | Break a specification into implementation tasks and an execution plan. |
+| Implement | `.agents/skills/implement/` | Execute the implementation plan, task by task, with testing. |
+| Code Review | `.agents/skills/code-review/` | Review completed work against the spec and project standards. |
+
 ## How to Begin
 
 1. Read `.agents/workingrules.md` to understand the rules you must follow.
 2. Read `docs/design/ARCHITECTURE.md` to understand the project's tech stack and constraints.
-3. Read `docs/specifications/specindex.md` to know which specs exist.
-4. Load only the specs relevant to the current phase or task — do not load all specs at once.
-5. Check `docs/design/sourcemap.md` before modifying any source file to understand the existing codebase.
-6. Follow "The Main Flow" defined in `.agents/workingrules.md` for all feature work.
+3. Read `docs/design/ADR.md` to understand key architectural decisions and their rationale.
+4. Read `docs/specifications/specindex.md` to know which specs exist.
+5. Load only the specs relevant to the current phase or task — do not load all specs at once.
+6. Check `docs/design/sourcemap.md` before modifying any source file to understand the existing codebase.
+7. Follow "The Main Flow" defined in `.agents/workingrules.md` for all feature work.

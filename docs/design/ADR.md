@@ -1,11 +1,45 @@
 # Architecture Decision Record (ADR) Index
-This is an index of key architecture decision records.
 
-The index format is of two types:
-- `<relative document path>` : {{short 2-3 lines description of document content}}
-- `{{decision description for short decisions}}`
+This file is the index of Architecture Decision Records. Individual ADRs are stored as separate files in `docs/adrs/`.
+
+## How ADRs Are Organized
+
+- **Index:** This file (`docs/design/ADR.md`) — provides a quick overview of all decisions.
+- **Individual files:** `docs/adrs/adr-<slug>.md` — full context, decision, and consequences for each decision.
+
+When making a new architectural decision, create a new file in `docs/adrs/` and add an entry to the index below.
+
+## Index Format
+
+- `` <relative path to ADR file> `` : {{short 2-3 line description of the decision}}
 
 ## ADR Index
-- Do NOT use 'eval' methods to evaluate the inputs anywhere.
-- Use regular expressions or third-party BNF parser to parse the input string. Do not write own parser from scratch.
-- `./packagedesign.md` : Documents the package/module design and their dependencies in mermaid.js format.
+
+- [`docs/adrs/adr-no-eval-for-input-parsing.md`](../adrs/adr-no-eval-for-input-parsing.md) : Do NOT use `eval` or equivalent methods to evaluate inputs. Use regular expressions or third-party BNF parsers instead.
+- [`docs/adrs/adr-package-design-location.md`](../adrs/adr-package-design-location.md) : Package/module design and dependencies are documented in `docs/design/packagedesign.md` using Mermaid.js format.
+
+## Creating a New ADR
+
+1. Create a new file: `docs/adrs/adr-<descriptive-slug>.md`
+2. Use the following structure:
+
+```markdown
+# ADR: <Title>
+
+**Date:** <date adopted>
+**Status:** Accepted | Superseded | Deprecated
+
+## Context
+
+What is the issue or motivation behind this decision?
+
+## Decision
+
+What decision was made?
+
+## Consequences
+
+What are the consequences (positive and negative) of this decision?
+```
+
+3. Add an entry to the index above.

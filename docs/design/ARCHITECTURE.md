@@ -1,7 +1,7 @@
 # ARCHITECTURE OF THE APPLICATION
 
 ## Key Architecture Guidelines
-Always follow the decisions in ADR.md
+Always follow the decisions in `docs/design/ADR.md` and the individual ADR files under `docs/adrs/`.
 
 ### Modules
 - Each folder in the `src/` represents a module or a submodule.
@@ -27,3 +27,5 @@ TODO: Confirm with user and update specific instructions here based on the chose
 
 ## Design Documents
 - `docs/design/sourcemap.md` : list of source code files and their purpose. Use this information to decide which files to modify or update during the code generation.
+- `docs/design/ADR.md` : index of architecture decisions. Individual ADR files live in `docs/adrs/`.
+- `docs/design/packagedesign.md` : Mermaid.js diagram of the package/module structure and dependencies.
