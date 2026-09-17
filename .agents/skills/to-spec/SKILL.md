@@ -1,6 +1,6 @@
 ---
 name: to-spec
-description: Turn the current conversation into a spec and publish it to the project documentation: no interview, just synthesis of what you've already discussed.
+description: Turn the current conversation into a spec and publish it to the project documentation -> no interview, just synthesis of what you've already discussed.
 origin: https://github.com/mattpocock/skills/tree/main/skills/engineering/to-spec
 author:
     - mattpocock
