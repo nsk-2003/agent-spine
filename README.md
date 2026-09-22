@@ -19,7 +19,7 @@ This is a generic, AI-agent-ready project template. Use it as a starting point f
    - Detect all `TODO` placeholders across the documentation.
    - Grill you with targeted questions to fill in every project-specific detail (tech stack, architecture, specs, etc.).
    - Update the documentation with your answers.
-   - Only begin coding once all context is resolved.
+   - Only begin coding once the key decisions are resolved (living registries like the source map are filled in as you build).
 
 ## What to Expect
 
@@ -38,8 +38,10 @@ Be prepared to answer with specificity. Vague answers will be challenged — thi
 |---|---|
 | `AGENTS.md` | Master instructions for AI agents (not for humans). |
 | `.agents/workingrules.md` | Strict rules the AI coding agent must follow. |
+| `.agents/ai-working-principles.md` | The operating theory the workflow is built on (reference). |
 | `.agents/memory/` | Agent's internal memory and session state. |
-| `.agents/skills/` | Agent-specific skill configuration. |
+| `.agents/skills/` | Agent-specific skill files (one folder per skill). |
+| `CONTEXT.md` | The project's shared vocabulary (domain glossary), grown as you go. |
 | `docs/` | Shared documentation (human + AI). Contains specs, architecture, and design docs. |
 | `src/` | Application source code (populated during development). |
 | `test/` | Tests — plans, unit tests, and test data. |

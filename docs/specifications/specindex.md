@@ -24,23 +24,24 @@ Each spec folder contains three core files:
 | File | Purpose |
 |---|---|
 | `spec.md` | Problem statement, user stories, implementation decisions, testing decisions, out of scope |
-| `plan.md` | Approach, milestones, risks, dependencies |
+| `plan.md` | Approach, milestones, risks, dependencies — or a Wayfinder decision map, when the effort was planned with `/wayfinder` |
 | `tasks.md` | Numbered, sequential task checklist for implementation |
 
 Optional files (contracts, checklists, diagrams) may be added as needed — they are not pre-created.
 
 ## Index Format
 
-- `` <relative folder path> `` : {{short 2-3 line description of spec content}}
+- `` <relative folder path> `` — **[Status]** : {{short 2-3 line description of spec content}}
+
+Status is one of `Draft` → `Active` → `Implemented` / `Superseded` (see `docs/adrs/adr-spec-lifecycle-and-doc-rot.md`).
 
 ## How to Use This File
 
 - Use this file to determine which specification documents to load.
 - Do not load all specification documents every time.
 - Load only the specs relevant to the current phase or task.
+- **Treat `Implemented`/`Superseded` specs as history, not current truth.** The code is the source of truth; verify against it before acting on a completed spec.
 
 ## Specifications Index
 
-- `./001-example-spec/` : Example specification demonstrating the numbered-folder structure. Contains placeholder spec, plan, and tasks files. Replace with your first real spec.
-- `./002-example-phase2/` : Example placeholder for a second phase or feature. Follows the same spec.md / plan.md / tasks.md structure.
-- `./003-example-phase3/` : Example placeholder for a third phase or feature. Follows the same spec.md / plan.md / tasks.md structure.
+- `./001-example-spec/` — **[Draft]** : Example specification demonstrating the numbered-folder structure. Contains placeholder spec, plan, and tasks files. Replace with your first real spec.

@@ -16,9 +16,20 @@ This skill takes the current conversation context and codebase understanding and
 
 Check with the user that these seams match their expectations.
 
-3. Write the spec using the template below, then save it as `spec.md` inside a new numbered folder under `docs/specifications/` (e.g., `docs/specifications/002-<slug>/spec.md`). Also create empty `plan.md` and `tasks.md` stubs in the same folder. Update `docs/specifications/specindex.md` with the new entry.
+3. Write the spec using the template below and save it as `spec.md`:
+   - **If a spec folder already exists for this effort** (e.g. a Wayfinder map already lives at `docs/specifications/<NNN>-<slug>/plan.md`), write `spec.md` into that same folder and leave the existing `plan.md` map intact.
+   - **Otherwise** create a new numbered folder under `docs/specifications/` (e.g. `docs/specifications/002-<slug>/`) and add empty `plan.md` and `tasks.md` stubs.
+
+   Ensure a `tasks.md` stub exists either way. Update `docs/specifications/specindex.md` with the entry and its Status. Keep the Status **in sync between the `spec.md` header and the `specindex.md` row**: `Active` once implementation begins, `Implemented` once the code lands (per `docs/adrs/adr-spec-lifecycle-and-doc-rot.md`).
 
 <spec-template>
+
+# <Spec title>
+
+**Status:** Draft
+**Created:** <date>
+
+> Lifecycle: `Draft` → `Active` → `Implemented` / `Superseded`. When the code lands, set Status to `Implemented` and stop editing this spec — from then on the code is the source of truth and this file is history. See `docs/adrs/adr-spec-lifecycle-and-doc-rot.md`.
 
 ## Problem Statement
 
@@ -49,8 +60,6 @@ A list of implementation decisions that were made. This can include:
 - Specific interactions
 
 Do NOT include specific file paths or code snippets. They may end up being outdated very quickly.
-
-Exception: if a prototype produced a snippet that encodes a decision more precisely than prose can (state machine, reducer, schema, type shape), inline it within the relevant decision and note briefly that it came from a prototype. Trim to the decision-rich parts, not a working demo, just the important bits.
 
 ## Testing Decisions
 

@@ -17,6 +17,7 @@ When making a new architectural decision, create a new file in `docs/adrs/` and 
 
 - [`docs/adrs/adr-no-eval-for-input-parsing.md`](../adrs/adr-no-eval-for-input-parsing.md) : Do NOT use `eval` or equivalent methods to evaluate inputs. Use regular expressions or third-party BNF parsers instead.
 - [`docs/adrs/adr-package-design-location.md`](../adrs/adr-package-design-location.md) : Package/module design and dependencies are documented in `docs/design/packagedesign.md` using Mermaid.js format.
+- [`docs/adrs/adr-spec-lifecycle-and-doc-rot.md`](../adrs/adr-spec-lifecycle-and-doc-rot.md) : Specs are sprint-scoped and status-tracked (`Draft`/`Active`/`Implemented`/`Superseded`); the code is the source of truth, and stale docs are guarded against.
 
 ## Creating a New ADR
 

@@ -1,6 +1,6 @@
 ---
 name: grill-with-docs
-description: A relentless interview to sharpen a plan or design, which also creates docs (ADRs and glossary) as we go.
+description: A relentless one-question-at-a-time interview to sharpen a plan or design, grounded in the repo's glossary and ADRs, which it reads at the start and updates as decisions are made.
 origin: https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs
 author:
     - mattpocock
@@ -12,32 +12,32 @@ If the skill is not available, follow the behavior described below:
 
 ## Behavior
 
-Interview the user relentlessly until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it.
+Interview the user relentlessly until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it, and you walk it resolving dependencies **one by one**.
 
-Work the tree in **rounds**. The **frontier** is every decision whose prerequisites are already settled: the questions you can ask _now_ without guessing at answers you haven't heard yet. Ask the whole frontier in one round: number each question and give your recommended answer. Then wait for the user's answers before the next round.
+**Ask exactly one question at a time.** Do not batch questions or dump a numbered list. Ask a single question, give your recommended answer, then **stop and wait** for the user's reply before asking the next. This is a back-and-forth conversation, not a questionnaire — each answer reshapes the tree and determines what to ask next.
 
-Format a round like so:
+Pick the next question from the **frontier**: the decisions whose prerequisites are already settled, so you never ask something that depends on an answer you haven't heard yet. Always resolve the question that most unblocks the rest.
+
+Format each question like so:
 
 ```
-❓ **Q1** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
-
-➡️ <your recommended answer>
-
----
-
-❓ **Q2** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
+❓ **<question title>**: <question body, may be multiple paragraphs, including options to choose between>
 
 ➡️ <your recommended answer>
 ```
 
-Each round the user answers reshapes the tree: settled decisions push the frontier outward and unblock questions that depended on them. Recompute the frontier and ask the next round.
+After the user answers, incorporate it, recompute the frontier, and ask the next single question. Keep going until every branch is visited.
 
 ## Documentation
 
-As decisions are made during the grilling session:
+`grill-with-docs` differs from a plain grilling interview in that it is **grounded in the repo's docs** and keeps them current.
 
-- Create individual ADR files in `docs/adrs/adr-<slug>.md` for each architectural decision, then add an entry to the index in `docs/design/ADR.md`.
-- Build a domain glossary in `CONTEXT.md` at the project root (create if it does not exist).
-- Update `docs/design/ARCHITECTURE.md` if architectural constraints are clarified.
+**At the start:** read `CONTEXT.md` (the domain glossary) and any ADRs in the area you're touching. Use that shared vocabulary throughout. Surface tensions early — if the idea collides with an existing definition, raise it before going further.
+
+**As decisions are made during the session:**
+
+- Sharpen fuzzy language and record terms in the domain glossary in `CONTEXT.md` at the repo root (create it if it does not exist). Challenge new language against the existing glossary and cross-reference it with the code, so a term means one thing everywhere.
+- Create an ADR (`docs/adrs/adr-<slug>.md`, plus an entry in the index at `docs/design/ADR.md`) **only** when a decision is **hard to reverse**, would be **surprising without context**, and reflects a **real trade-off**. Interchangeable choices you could swap later do not need an ADR.
+- Update `docs/design/ARCHITECTURE.md` when architectural constraints or previously-`TODO` project details are clarified.
 
 The session is done when the frontier is empty: every branch of the design tree visited, nothing left silently assumed. Do not act on it until the user confirms you have reached a shared understanding.

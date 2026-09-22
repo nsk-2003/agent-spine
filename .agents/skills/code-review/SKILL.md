@@ -11,6 +11,8 @@ Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
 - **Standards**: does the code conform to this repo's documented coding standards?
 - **Spec**: does the code faithfully implement the originating issue / spec?
 
+> Run this in a **fresh-context sub-agent** — never the context that wrote the code (it is in the dumb zone and attached to its own work). Prefer a stronger model for review than was used to implement. **Push** the standards sources into the reviewer's context so it always checks against them rather than having to remember to look. See `.agents/ai-working-principles.md`.
+
 ## Process
 
 ### 1. Pin the fixed point
@@ -26,6 +28,8 @@ Look for the originating spec:
 1. A spec file under `docs/specifications/` matching the branch name or feature.
 2. A path the user passed as an argument.
 3. If nothing is found, ask the user where the spec is.
+
+For **small work with no spec** (the `grill → implement → code-review` path), use the agreed grilling outcome / conversation as the intent for the Spec axis. If no intent source exists at all, say so and review the Standards axis only.
 
 ### 3. Identify the standards sources
 

@@ -12,11 +12,11 @@ If project details are not decided or contain `TODO` placeholders, you MUST ask 
 
 Specifically, before any code generation:
 
-1. Scan all files under `docs/` for `TODO` markers.
-2. For each `TODO`, ask the user a specific, pointed question.
-3. Do not accept vague answers. Probe for concrete decisions (tech stack, build tool, testing framework, deployment target, etc.).
+1. Scan `docs/` and `CONTEXT.md` for **decision** `TODO` markers — the ones that need a human choice (tech stack, build tool, testing framework, deployment target, architecture constraints, dev environment).
+2. For each, ask the user a specific, pointed question.
+3. Do not accept vague answers. Probe for concrete decisions.
 4. Update the relevant documentation files with the user's answers.
-5. Only begin coding once every `TODO` has been resolved.
+5. Only begin coding once every **decision** `TODO` is resolved. **Living registries** — `docs/design/sourcemap.md`, `docs/design/packagedesign.md`, ADR dates, and per-spec `plan.md`/`tasks.md` — are filled in as development progresses, not up front. Do not block on them.
 
 ## Project Folder Map
 
@@ -24,8 +24,10 @@ Specifically, before any code generation:
 |---|---|
 | `AGENTS.md` | **This file.** Master instructions for AI agents. Read this first. |
 | `.agents/workingrules.md` | Strict rules the coding agent must follow during development. |
+| `.agents/ai-working-principles.md` | The operating theory (smart zone, clear-over-compact, feedback loops, deep modules). Read before the working rules. |
 | `.agents/memory/` | Agent's internal memory and state. Store context, decisions, and session notes here. |
-| `.agents/skills/` | Agent-specific skill files and tooling configuration. |
+| `.agents/skills/` | Agent-specific skill files. One folder per skill (see the Agent Skills table below). |
+| `CONTEXT.md` | Ubiquitous-language glossary (durable). Read at the start of grilling; the shared vocabulary of the project. |
 | `docs/devenv.md` | Step-by-step local development environment setup instructions. |
 | `docs/implementation_plan.md` | Phase-wise roadmap and implementation plan. |
 | `docs/specifications/specindex.md` | Index of all spec documents. Use this to avoid loading all specs at once. |
@@ -47,18 +49,21 @@ This project uses skills from the [Main Flow](https://www.aihero.dev/skills) fra
 
 | Skill | Location | Purpose |
 |---|---|---|
-| Grill with Docs | `.agents/skills/grill-with-docs/` | Stress-test project details and resolve all `TODO` placeholders before coding. |
-| To Spec | `.agents/skills/to-spec/` | Transform a feature idea into a structured specification document. |
-| To Tickets | `.agents/skills/to-tickets/` | Break a specification into implementation tasks and an execution plan. |
-| Implement | `.agents/skills/implement/` | Execute the implementation plan, task by task, with testing. |
-| Code Review | `.agents/skills/code-review/` | Review completed work against the spec and project standards. |
+| Wayfinder | `.agents/skills/wayfinder/` | Plan work too big for one session: chart a map of decision tickets and clear the fog before writing a spec. |
+| Grill with Docs | `.agents/skills/grill-with-docs/` | Relentless one-question-at-a-time interview to sharpen a plan; reads and updates `CONTEXT.md` and ADRs. |
+| To Spec | `.agents/skills/to-spec/` | Synthesize the agreed conversation into a structured specification (destination document). |
+| To Tickets | `.agents/skills/to-tickets/` | Break a spec into small vertical-slice (tracer-bullet) tickets with blocking edges. |
+| Implement | `.agents/skills/implement/` | Build a ticket into code, test-first, one ticket per fresh session. |
+| Code Review | `.agents/skills/code-review/` | Review the diff against standards and spec, in a fresh-context sub-agent. |
 
 ## How to Begin
 
-1. Read `.agents/workingrules.md` to understand the rules you must follow.
-2. Read `docs/design/ARCHITECTURE.md` to understand the project's tech stack and constraints.
-3. Read `docs/design/ADR.md` to understand key architectural decisions and their rationale.
-4. Read `docs/specifications/specindex.md` to know which specs exist.
-5. Load only the specs relevant to the current phase or task — do not load all specs at once.
-6. Check `docs/design/sourcemap.md` before modifying any source file to understand the existing codebase.
-7. Follow "The Main Flow" defined in `.agents/workingrules.md` for all feature work.
+1. Read `.agents/ai-working-principles.md` to understand the constraints the workflow is built around.
+2. Read `.agents/workingrules.md` to understand the rules you must follow.
+3. Read `CONTEXT.md` to learn the project's shared vocabulary before discussing or naming anything.
+4. Read `docs/design/ARCHITECTURE.md` to understand the tech stack, module rules, and deep-module guidance.
+5. Read `docs/design/ADR.md` to understand key architectural decisions and their rationale.
+6. Read `docs/specifications/specindex.md` to know which specs exist and their status.
+7. Load only the specs relevant to the current phase or task — do not load all specs at once. Treat `Implemented`/`Superseded` specs as history and verify against the code.
+8. Check `docs/design/sourcemap.md` before modifying any source file to understand the existing codebase.
+9. Follow "The Main Flow" in `.agents/workingrules.md`, choosing the entry point by the size of the work (small / medium / large).

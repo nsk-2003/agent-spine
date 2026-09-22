@@ -1,5 +1,10 @@
 # Specification
 
+**Status:** Draft
+**Created:** TODO: set date
+
+> Lifecycle: `Draft` → `Active` → `Implemented` / `Superseded`. When the code lands, set Status to `Implemented` and stop editing — the code is then the source of truth. See `docs/adrs/adr-spec-lifecycle-and-doc-rot.md`.
+
 TODO: Replace this with the actual specification for this phase.
 
 ## Problem Statement
@@ -31,8 +36,6 @@ A list of implementation decisions that were made. This can include:
 - Specific interactions
 
 Do NOT include specific file paths or code snippets. They may end up being outdated very quickly.
-
-Exception: if a prototype produced a snippet that encodes a decision more precisely than prose can (state machine, reducer, schema, type shape), inline it within the relevant decision and note briefly that it came from a prototype. Trim to the decision-rich parts, not a working demo, just the important bits.
 
 ## Testing Decisions
 

@@ -11,6 +11,15 @@ Always follow the decisions in `docs/design/ADR.md` and the individual ADR files
 - Frontend modules can depend on backend modules.
 - Backend modules cannot depend on the frontend module.
 
+### Module Depth: prefer deep modules
+Design modules to be **deep**: a simple, thin interface (the small set of functions/types callers use) hiding substantial functionality. Avoid **shallow** modules — many small, undifferentiated files with tangled cross-dependencies.
+
+- Deep modules are easier for an agent to navigate and to test: wrap one test boundary around the module's interface and you exercise a lot of behaviour.
+- Shallow modules force the agent to trace the whole dependency graph to understand anything, and leave test boundaries unclear (which is how bad, over-mocked tests get written).
+- Left unsupervised, agents default to producing shallow modules. Steer deliberately toward deep ones.
+
+**Gray-box technique:** design the *interface* of a module yourself, then delegate the *implementation* to the agent. You keep a map of the system's shapes and behaviours — enough to reason about it and to review at the boundary — without reading every internal line. This is how to move fast while retaining a real sense of the codebase.
+
 ### Implementation guidelines
 - When user enters the input, then pass the string to backend code. The backend will parse the string and generate the appropriate operations code to calculate the result.
 - Generate the top level file (containing the main or entry point function) for the application in the `src/` folder.
