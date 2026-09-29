@@ -10,7 +10,6 @@ Strictly follow these rules. DO NOT VIOLATE UNDER ANY CIRCUMSTANCES.
 - Run the unit tests and ensure that all tests are passing after making any changes.
 - The Main Flow skills are the sanctioned way to write specific docs (specs, tickets, ADRs, `docs/design/ARCHITECTURE.md`, `sourcemap.md`, `packagedesign.md`, `CONTEXT.md`). Use them for those.
 - Do not otherwise overwrite or freehand-edit files in `docs/` — especially human-authored guidance and `TODO` placeholders — unless the user explicitly asks.
-- Store your memories in .agents/memory/ folder.
 
 ## Do Not
 - Implement anything that conflicts with approved specs or architecture decisions.

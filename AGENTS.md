@@ -23,10 +23,11 @@ Specifically, before any code generation:
 | Path | Purpose |
 |---|---|
 | `AGENTS.md` | **This file.** Master instructions for AI agents. Read this first. |
+| `CLAUDE.md` | Symlink to `AGENTS.md`. Do not edit — edit `AGENTS.md`. |
 | `.agents/workingrules.md` | Strict rules the coding agent must follow during development. |
 | `.agents/ai-working-principles.md` | The operating theory (smart zone, clear-over-compact, feedback loops, deep modules). Read before the working rules. |
-| `.agents/memory/` | Agent's internal memory and state. Store context, decisions, and session notes here. |
-| `.agents/skills/` | Agent-specific skill files. One folder per skill (see the Agent Skills table below). |
+| `.agents/skills/` | Skill definitions, one folder per skill (see the Agent Skills table below). The canonical copy. |
+| `.claude/skills/` | Symlink to `.agents/skills/`. Do not edit — edit the files under `.agents/skills/`. |
 | `CONTEXT.md` | Ubiquitous-language glossary (durable). Read at the start of grilling; the shared vocabulary of the project. |
 | `docs/devenv.md` | Step-by-step local development environment setup instructions. |
 | `docs/implementation_plan.md` | Phase-wise roadmap and implementation plan. |

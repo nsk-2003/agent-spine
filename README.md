@@ -9,7 +9,7 @@ This is a generic, AI-agent-ready project template. Use it as a starting point f
    ```bash
    git init
    ```
-3. **Open the project with your preferred AI coding tool** (e.g., Bionic, Cursor, Claude Code, etc.).
+3. **Open the project in your AI coding agent.**
 4. **Paste the following prompt** to kick off the session:
 
    > Read AGENTS.md and prepare the project for development.
@@ -37,10 +37,11 @@ Be prepared to answer with specificity. Vague answers will be challenged — thi
 | Path | Purpose |
 |---|---|
 | `AGENTS.md` | Master instructions for AI agents (not for humans). |
+| `CLAUDE.md` | Symlink to `AGENTS.md`, for tools that look for this filename. Never edit directly. |
 | `.agents/workingrules.md` | Strict rules the AI coding agent must follow. |
 | `.agents/ai-working-principles.md` | The operating theory the workflow is built on (reference). |
-| `.agents/memory/` | Agent's internal memory and session state. |
-| `.agents/skills/` | Agent-specific skill files (one folder per skill). |
+| `.agents/skills/` | Skill definitions, one folder per skill. The canonical copy. |
+| `.claude/skills/` | Symlink to `.agents/skills/`, for tools that look there. Never edit directly. |
 | `CONTEXT.md` | The project's shared vocabulary (domain glossary), grown as you go. |
 | `docs/` | Shared documentation (human + AI). Contains specs, architecture, and design docs. |
 | `src/` | Application source code (populated during development). |
@@ -52,3 +53,5 @@ Be prepared to answer with specificity. Vague answers will be challenged — thi
 - **Do not edit `AGENTS.md` or `.agents/workingrules.md`** unless you intentionally want to change how the AI agent behaves.
 - All `TODO` markers in `docs/` are intentional placeholders. The AI agent will guide you through filling them.
 - This template is framework-agnostic. It works with any language, stack, or tooling.
+- **The repo is the only source of truth.** Anything worth carrying between sessions is a decision, and decisions are written to an ADR under `docs/adrs/` or to `CONTEXT.md`, where they are reviewable in version control.
+- **`AGENTS.md` and `.agents/` hold the real agent instructions and skills**; `CLAUDE.md` and `.claude/skills/` are symlinks into them, not copies. Keeping the content out of any single tool's directory is what lets a new tool be supported by adding one symlink, with nothing to rewrite and no copy to drift.

@@ -1,10 +1,10 @@
 ---
 name: grill-with-docs
 description: A relentless one-question-at-a-time interview to sharpen a plan or design, grounded in the repo's glossary and ADRs, which it reads at the start and updates as decisions are made.
-origin: https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs
-author:
-    - mattpocock
 license: MIT
+metadata:
+  origin: https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs
+  author: mattpocock
 ---
 Call the Skill tool for "grilling" if available.
 

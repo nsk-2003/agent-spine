@@ -1,0 +1,15 @@
+# Personal, machine-local overrides and credentials. Team-shared config is
+# committed; anything ending in .local is yours alone.
+*.local.json
+*.local.md
+.env
+.env.local
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Add language- and framework-specific entries below once the stack is chosen.

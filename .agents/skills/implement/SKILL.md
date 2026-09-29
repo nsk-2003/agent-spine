@@ -1,10 +1,10 @@
 ---
 name: implement
 description: Implement a piece of work based on a spec or set of tickets.
-origin: https://github.com/mattpocock/skills/tree/main/skills/engineering/implement
-author:
-    - mattpocock
 license: MIT
+metadata:
+  origin: https://github.com/mattpocock/skills/tree/main/skills/engineering/implement
+  author: mattpocock
 ---
 Implement the work described by the user in the spec or tickets.
 

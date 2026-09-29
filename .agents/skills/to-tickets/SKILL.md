@@ -1,10 +1,10 @@
 ---
 name: to-tickets
 description: Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published as local files.
-origin: https://github.com/mattpocock/skills/tree/main/skills/engineering/to-tickets
-author:
-    - mattpocock
 license: MIT
+metadata:
+  origin: https://github.com/mattpocock/skills/tree/main/skills/engineering/to-tickets
+  author: mattpocock
 ---
 Break a plan, spec, or conversation into a set of **tickets**: tracer-bullet vertical slices, each declaring the tickets that **block** it.
 

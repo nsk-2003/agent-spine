@@ -1,10 +1,10 @@
 ---
 name: wayfinder
 description: Plan work too big to fit one session -> chart a map of decision tickets across many planning sessions, clearing the fog until the destination is reachable, then hand off to spec and tickets.
-origin: https://github.com/mattpocock/skills
-author:
-    - mattpocock
 license: MIT
+metadata:
+  origin: https://github.com/mattpocock/skills
+  author: mattpocock
 ---
 Call the Skill tool for "wayfinder" if available.
 

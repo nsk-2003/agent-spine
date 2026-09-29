@@ -1,10 +1,10 @@
 ---
 name: code-review
 description: Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes -> Standards and Spec compliance.
-origin: https://github.com/mattpocock/skills/tree/main/skills/engineering/code-review
-author:
-    - mattpocock
 license: MIT
+metadata:
+  origin: https://github.com/mattpocock/skills/tree/main/skills/engineering/code-review
+  author: mattpocock
 ---
 Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
 
