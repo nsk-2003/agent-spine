@@ -14,19 +14,11 @@ If the skill is not available, follow the behavior described below:
 
 Interview the user relentlessly until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it, and you walk it resolving dependencies **one by one**.
 
-**Ask exactly one question at a time.** Do not batch questions or dump a numbered list. Ask a single question, give your recommended answer, then **stop and wait** for the user's reply before asking the next. This is a back-and-forth conversation, not a questionnaire — each answer reshapes the tree and determines what to ask next.
+**Ask exactly one question at a time**, using the `AskUserQuestion` tool. Do not batch multiple questions into a single call. Put your recommended answer first in the options list, labeled "(Recommended)". **Stop and wait** for the user's reply before asking the next. This is a back-and-forth conversation, not a questionnaire — each answer reshapes the tree and determines what to ask next.
 
 Pick the next question from the **frontier**: the decisions whose prerequisites are already settled, so you never ask something that depends on an answer you haven't heard yet. Always resolve the question that most unblocks the rest.
 
-Format each question like so:
-
-```
-❓ **<question title>**: <question body, may be multiple paragraphs, including options to choose between>
-
-➡️ <your recommended answer>
-```
-
-After the user answers, incorporate it, recompute the frontier, and ask the next single question. Keep going until every branch is visited.
+After the user answers, incorporate it, recompute the frontier, and ask the next single question via `AskUserQuestion`. Keep going until every branch is visited.
 
 ## Documentation
 
