@@ -45,7 +45,7 @@ The "idea → ship" spine is **scale-adaptive**: run as much process as the work
 2. `/to-spec`: Turn the agreed conversation into a written spec (the destination document).
 3. `/to-tickets`: Split a spec into small vertical-slice tickets an agent can build.
 4. `/implement`: Build a ticket into code, test-first.
-5. `/code-review`: Review a diff against your standards and against the spec, in a fresh-context sub-agent.
+5. `/code-review`: Review a diff against your standards and against the spec, in a fresh-context sub-agent (recommended) or the current context, as the user chooses.
 
 ## Spec & Document Lifecycle
 

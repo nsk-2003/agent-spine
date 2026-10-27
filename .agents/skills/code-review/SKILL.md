@@ -11,9 +11,23 @@ Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
 - **Standards**: does the code conform to this repo's documented coding standards?
 - **Spec**: does the code faithfully implement the originating issue / spec?
 
-> Run this in a **fresh-context sub-agent** — never the context that wrote the code (it is in the dumb zone and attached to its own work). Prefer a stronger model for review than was used to implement. **Push** the standards sources into the reviewer's context so it always checks against them rather than having to remember to look. See `.agents/ai-working-principles.md`.
+> **Fresh context is recommended** — the context that wrote the code is in the dumb zone and attached to its own work. Prefer a stronger model for review than was used to implement. **Push** the standards sources into the reviewer's context so it always checks against them rather than having to remember to look. See `.agents/ai-working-principles.md`.
 
 ## Process
+
+### 0. Choose the review context
+
+Before doing anything else, ask the user with the `AskUserQuestion` tool, as a single question, which context to run the review in. Put "Fresh context" first, labeled "(Recommended)":
+
+1. **Fresh context**: run the review in a new agent or sub-agent with no prior conversation history.
+2. **Current context**: run the review in the existing agent or sub-agent, continuing with the current conversation context.
+
+**Stop and wait** for the answer, then run steps 1–4 as follows:
+
+- **Fresh context**: spawn a new sub-agent and give it everything it needs, since it has no history: the fixed point (or ask the user for it first, per step 1), the spec source or intent, and the standards sources. Have it perform steps 2–4 and return the report.
+- **Current context**: perform steps 1–4 yourself in this conversation, reusing what is already known (the fixed point, spec, and intent discussed so far) instead of re-asking.
+
+If the user picks "Current context", do not push back or re-ask; the choice is theirs.
 
 ### 1. Pin the fixed point
 

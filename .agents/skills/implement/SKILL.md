@@ -23,7 +23,7 @@ Implement the work described by the user in the spec or tickets.
 
 5. **Run typechecking** regularly, single test files regularly, and the full test suite once at the end.
 
-6. **Once done**, use /code-review to review the work — in a fresh-context sub-agent, not this one.
+6. **Once done**, use /code-review to review the work — in a fresh-context sub-agent (recommended); the skill asks which context to use.
 
 7. **Commit your work** to the current branch.
 

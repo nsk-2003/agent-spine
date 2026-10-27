@@ -55,7 +55,7 @@ This project uses skills from the [Main Flow](https://www.aihero.dev/skills) fra
 | To Spec | `.agents/skills/to-spec/` | Synthesize the agreed conversation into a structured specification (destination document). |
 | To Tickets | `.agents/skills/to-tickets/` | Break a spec into small vertical-slice (tracer-bullet) tickets with blocking edges. |
 | Implement | `.agents/skills/implement/` | Build a ticket into code, test-first, one ticket per fresh session. |
-| Code Review | `.agents/skills/code-review/` | Review the diff against standards and spec, in a fresh-context sub-agent. |
+| Code Review | `.agents/skills/code-review/` | Review the diff against standards and spec, in a fresh-context sub-agent (recommended) or the current context, as the user chooses. |
 
 ## How to Begin
 
