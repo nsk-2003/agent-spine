@@ -10,8 +10,8 @@ Each entry must follow this format:
 
 | File (relative to project root) | Purpose |
 |---|---|
-| `src/example_module/module_core.py` | **Good example:** This module handles the core parsing logic for user input strings, tokenizing them into structured operations. |
-| `src/example_module/utils.py` | **Bad example:** Utility functions. _(Too vague — does not explain what specific utilities or why they exist.) |
+| `<source-location>/example_module/module_core.<ext>` | **Good example:** This module handles the core parsing logic for user input strings, tokenizing them into structured operations. |
+| `<source-location>/example_module/utils.<ext>` | **Bad example:** Utility functions. _(Too vague — does not explain what specific utilities or why they exist.) |
 
 ### Guidelines for Purpose Comments
 

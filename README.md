@@ -44,8 +44,6 @@ Be prepared to answer with specificity. Vague answers will be challenged — thi
 | `.claude/skills/` | Symlink to `.agents/skills/`, for tools that look there. Never edit directly. |
 | `CONTEXT.md` | The project's shared vocabulary (domain glossary), grown as you go. |
 | `docs/` | Shared documentation (human + AI). Contains specs, architecture, and design docs. |
-| `src/` | Application source code (populated during development). |
-| `test/` | Tests — plans, unit tests, and test data. |
 | `environment.sh` / `environment.bat` | Environment setup scripts (stubs, to be customized). |
 
 ## Notes

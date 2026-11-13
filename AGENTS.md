@@ -38,9 +38,6 @@ Specifically, before any code generation:
 | `docs/adrs/` | Individual ADR files (`adr-<slug>.md`). One file per architectural decision. |
 | `docs/design/packagedesign.md` | Mermaid.js diagram of the package/module structure. |
 | `docs/design/sourcemap.md` | Registry of all source code files and their purpose. Updated alongside development. |
-| `src/` | Application source code. |
-| `test/unit/` | Unit test source code. |
-| `test/testdata/` | Mock data, fixtures, and test assets. |
 | `environment.sh` | Unix environment setup entry point. |
 | `environment.bat` | Windows environment setup entry point. |
 

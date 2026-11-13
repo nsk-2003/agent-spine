@@ -4,7 +4,7 @@
 Always follow the decisions in `docs/design/ADR.md` and the individual ADR files under `docs/adrs/`.
 
 ### Modules
-- Each folder in the `src/` represents a module or a submodule.
+- Organize the code into modules and submodules, using whatever structure the chosen stack and project conventions call for.
 - Modules must have acyclic dependency.
 - Higher layer modules can depend on lower layer module.
 - Modules in the Same layer cannot depend on each other.
@@ -22,14 +22,16 @@ Design modules to be **deep**: a simple, thin interface (the small set of functi
 
 ### Implementation guidelines
 - When user enters the input, then pass the string to backend code. The backend will parse the string and generate the appropriate operations code to calculate the result.
-- Generate the top level file (containing the main or entry point function) for the application in the `src/` folder.
+- Generate the top level file (containing the main or entry point function) for the application in the source location recorded under Technology Stack.
 - Generate and update package design diagram in `docs/design/packagedesign.md`. The file will be in markdown format with diagrams in mermaid.js format.
 
 ## Technology Stack
 - backend : TODO: Confirm with user and update here
 - frontend : TODO: Confirm with user and update here
 - build tool : TODO: Confirm with user and update here
-- unit test framework : TODO: Confirm with user and update here
+- test framework : TODO: Confirm with user and update here
+- source location : TODO: Confirm with user and update here
+- test location (tests, test data, fixtures) : TODO: Confirm with user and update here
 
 ## Technology stack specific instructions for Code generation
 TODO: Confirm with user and update specific instructions here based on the chosen tech stack.

@@ -6,8 +6,8 @@ Strictly follow these rules. DO NOT VIOLATE UNDER ANY CIRCUMSTANCES.
 - Preserve behavior unless the task explicitly requires a change.
 - Do not change public APIs unless instructed.
 - Follow existing project patterns before introducing new ones.
-- Write the unit tests before making any changes.
-- Run the unit tests and ensure that all tests are passing after making any changes.
+- Write the tests before making any changes, using the test framework and test location recorded under Technology Stack in `docs/design/ARCHITECTURE.md`.
+- Run the tests and ensure that all tests are passing after making any changes.
 - The Main Flow skills are the sanctioned way to write specific docs (specs, tickets, ADRs, `docs/design/ARCHITECTURE.md`, `sourcemap.md`, `packagedesign.md`, `CONTEXT.md`). Use them for those.
 - Do not otherwise overwrite or freehand-edit files in `docs/` — especially human-authored guidance and `TODO` placeholders — unless the user explicitly asks.
 
